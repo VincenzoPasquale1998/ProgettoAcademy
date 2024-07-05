@@ -22,10 +22,10 @@ public class AutomobileDAO {
         try (PreparedStatement stmt = connection.prepareStatement(query)) { 
             stmt.setString(1, nome); 
             stmt.setString(2, marca); 
-            stmt.setString(1, modello); 
-            stmt.setDouble(2, prezzo); 
-            stmt.setString(1, foto); 
-            stmt.setString(1, descrizione); 
+            stmt.setString(3, modello); 
+            stmt.setDouble(4, prezzo); 
+            stmt.setString(5, foto); 
+            stmt.setString(6, descrizione); 
             stmt.executeUpdate(); 
         } 
     } 
