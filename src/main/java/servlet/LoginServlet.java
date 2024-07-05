@@ -6,12 +6,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import util.DatabaseManager;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import dao.AutomobileDAO;
 import dao.UtenteDAO;
 import bean.Utente;
 
@@ -24,14 +26,14 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/carrent", "root", "password");
+        	DatabaseManager dbManager = new DatabaseManager();
+			UtenteDAO utenteDAO= new UtenteDAO(dbManager.getConnection());
+			
+			Utente u = utenteDAO.getUtenteByUsernamePassword(username, password);
 
-            UtenteDAO utenteDAO = new UtenteDAO(connection);
-            Utente utente = utenteDAO.getUtenteByUsernamePassword(username, password);
-
-            if (utente != null) {
+            if (u != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("utente", utente);
+                session.setAttribute("utente", u);
                 session.setAttribute("isLoggedIn", true);
                 
                 request.setAttribute("msg", "Login avvenuto con successo");
