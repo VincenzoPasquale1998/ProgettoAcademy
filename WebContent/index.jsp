@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,7 +57,7 @@
           <div class="col-lg-8 ftco-animate">
           	<div class="text w-100 text-center mb-md-5 pb-md-5">
 	            <h1 class="mb-4">Veloce e Facile il nostro rent</h1>
-	            <p style="font-size: 18px;">Esplora la tua destinazione con la massima libertà grazie al nostro servizio di noleggio auto. Offriamo una vasta gamma di veicoli moderni e ben mantenuti, perfetti per ogni esigenza di viaggio. Che tu stia pianificando una vacanza in famiglia, un viaggio d'affari o una fuga romantica, abbiamo l'auto giusta per te. Prenota ora e goditi un'esperienza di guida senza stress con tariffe trasparenti e un servizio clienti dedicato.</p>
+	            <p style="font-size: 18px;">Esplora la tua destinazione con la massima libertÃ  grazie al nostro servizio di noleggio auto. Offriamo una vasta gamma di veicoli moderni e ben mantenuti, perfetti per ogni esigenza di viaggio. Che tu stia pianificando una vacanza in famiglia, un viaggio d'affari o una fuga romantica, abbiamo l'auto giusta per te. Prenota ora e goditi un'esperienza di guida senza stress con tariffe trasparenti e un servizio clienti dedicato.</p>
 	           <!-- <a href="https://vimeo.com/45830194" class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
 	            	<div class="icon d-flex align-items-center justify-content-center">
 	            		<span class="ion-ios-play"></span>
@@ -154,21 +156,23 @@
     		<div class="row">
     			<div class="col-md-12">
     				<div class="carousel-car owl-carousel">
+    				<c:forEach var="automobile" items ="${automobili}">
     					<div class="item">
     						<div class="car-wrap rounded ftco-animate">
 		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
 		    					</div>
 		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
+		    						<h2 class="mb-0"><a href="#">${automobile.nome}</a></h2>
 		    						<div class="d-flex mb-3">
-			    						<span class="cat">Cheverolet</span>
-			    						<p class="price ml-auto">$500 <span>/day</span></p>
+			    						<span class="cat">${automobile.marca}</span>
+			    						<p class="price ml-auto">${automobile.prezzo}<span>/day</span></p>
 		    						</div>
 		    						<p class="d-flex mb-0 d-block ml-5"><!--<a href="#" class="btn btn-primary py-2 mr-1">Book now</a>--> 
                       <a href="#" class="btn btn-secondary py-2 ml-4">Dettagli</a></p>
 		    					</div>
 		    				</div>
     					</div>
+    					</c:forEach>
     					<div class="item">
     						<div class="car-wrap rounded ftco-animate">
 		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
@@ -230,13 +234,13 @@
 	          	<span class="subheading">Su di Noi</span>
 	            <h2 class="mb-4">Benvenuti da CarRent!</h2>
 
-	            <p>Benvenuti a CarRent, il vostro partner di fiducia per il noleggio auto a Napoli. Siamo un'azienda locale con una passione per offrire un servizio eccellente ai nostri clienti, sia che siate turisti in visita alla meravigliosa città di Napoli o residenti alla ricerca di un'auto per esigenze temporanee.
+	            <p>Benvenuti a CarRent, il vostro partner di fiducia per il noleggio auto a Napoli. Siamo un'azienda locale con una passione per offrire un servizio eccellente ai nostri clienti, sia che siate turisti in visita alla meravigliosa cittÃ  di Napoli o residenti alla ricerca di un'auto per esigenze temporanee.
 
-                La nostra missione è rendere il noleggio auto un'esperienza semplice, conveniente e piacevole. Con una flotta di veicoli moderni e ben curati, garantiamo sicurezza, comfort e affidabilità su ogni strada. Siamo orgogliosi della nostra trasparenza nelle tariffe e del nostro impegno per la soddisfazione del cliente.
+                La nostra missione Ã¨ rendere il noleggio auto un'esperienza semplice, conveniente e piacevole. Con una flotta di veicoli moderni e ben curati, garantiamo sicurezza, comfort e affidabilitÃ  su ogni strada. Siamo orgogliosi della nostra trasparenza nelle tariffe e del nostro impegno per la soddisfazione del cliente.
                 
-                Napoli, con il suo mix unico di storia, cultura e bellezze naturali, merita di essere esplorata al massimo. Dal maestoso Vesuvio alle affascinanti strade del centro storico, vogliamo aiutarvi a scoprire ogni angolo nascosto di questa splendida città. Il nostro team di esperti è sempre disponibile per offrirvi consigli e assistenza, assicurandosi che il vostro viaggio sia indimenticabile.
+                Napoli, con il suo mix unico di storia, cultura e bellezze naturali, merita di essere esplorata al massimo. Dal maestoso Vesuvio alle affascinanti strade del centro storico, vogliamo aiutarvi a scoprire ogni angolo nascosto di questa splendida cittÃ . Il nostro team di esperti Ã¨ sempre disponibile per offrirvi consigli e assistenza, assicurandosi che il vostro viaggio sia indimenticabile.
                 
-                Scegliere CarRent significa optare per qualità, convenienza e un servizio personalizzato. Venite a trovarci nella nostra sede di Napoli e scoprite come possiamo rendere il vostro prossimo viaggio ancora più speciale.
+                Scegliere CarRent significa optare per qualitÃ , convenienza e un servizio personalizzato. Venite a trovarci nella nostra sede di Napoli e scoprite come possiamo rendere il vostro prossimo viaggio ancora piÃ¹ speciale.
                 
                 
                 
@@ -275,7 +279,7 @@
             	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-transportation"></span></div>
             	<div class="text w-100">
                 <h3 class="heading mb-2">City Transfer</h3>
-                <p>Offriamo soluzioni di trasporto comode e affidabili, ideali per chi necessita di muoversi rapidamente e senza stress all'interno della città.</p>
+                <p>Offriamo soluzioni di trasporto comode e affidabili, ideali per chi necessita di muoversi rapidamente e senza stress all'interno della cittÃ .</p>
               </div>
             </div>
 					</div>
@@ -294,7 +298,7 @@
             	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-transportation"></span></div>
             	<div class="text w-100">
                 <h3 class="heading mb-2">City Tour</h3>
-                <p>Esplora le meraviglie di Napoli con il nostro servizio di city tour. Offriamo tour personalizzati che ti permetteranno di scoprire i tesori nascosti e le principali attrazioni di questa affascinante città.</p>
+                <p>Esplora le meraviglie di Napoli con il nostro servizio di city tour. Offriamo tour personalizzati che ti permetteranno di scoprire i tesori nascosti e le principali attrazioni di questa affascinante cittÃ .</p>
               </div>
             </div>
 					</div>
