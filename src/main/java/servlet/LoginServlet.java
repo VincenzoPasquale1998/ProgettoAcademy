@@ -46,16 +46,26 @@ public class LoginServlet extends HttpServlet {
 			
 			Utente u = utenteDAO.getUtenteByUsernamePassword(username, password);
 
-            if (u != null) {
+            if (u != null&&u.getPermesso()==2) {
                 HttpSession session = request.getSession();
                 session.setAttribute("utente", u);
                 session.setAttribute("isLoggedIn", true);
                 
                 request.setAttribute("msg", "Login avvenuto con successo");
                 request.getRequestDispatcher("homepage.jsp").forward(request, response);
-            } else {
+            }
+            else if(u.getPermesso()==1&&u!=null) {
+            	HttpSession session = request.getSession();
+                session.setAttribute("utente", u);
+                session.setAttribute("isLoggedIn", true);
+                
+                request.setAttribute("msg", "Login avvenuto con successo");
+                request.getRequestDispatcher("update.jsp").forward(request, response);
+            }
+            	else {
                 response.sendRedirect("login.jsp");
             }
+            
         } catch (SQLException e) {
             e.printStackTrace(); 
             throw new ServletException("Database access error", e);

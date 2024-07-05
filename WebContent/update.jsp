@@ -6,7 +6,7 @@
     <title>Upload Automobile</title>
 </head>
 <body>
-    <form action="uploadAutomobile" method="post" enctype="multipart/form-data">
+    <form action="admin" method="post" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome"><br><br>
         <label for="marca">Marca:</label>
