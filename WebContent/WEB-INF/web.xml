@@ -59,4 +59,14 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CarServlet</display-name>
+    <servlet-name>CarServlet</servlet-name>
+    <servlet-class>servlet.CarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarServlet</servlet-name>
+    <url-pattern>/CarServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
