@@ -12,13 +12,16 @@ public class DatabaseManager {
         try {
             Properties props = new Properties();
             props.load(getClass().getClassLoader().getResourceAsStream("db.properties"));
-
+            String JDBC_DRIVER ="com.mysql.jdbc.Driver";
             String url = props.getProperty("url");
+            //url="jdbc:mysql://localhost:3306/campionato_calcio";
             String user = props.getProperty("user");
+            //user="root";
             String password = props.getProperty("password");
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(url, user, password);
+            //password="";
+            //connection = DriverManager.getConnection(url, user, password);
+			Class.forName(JDBC_DRIVER);
+			connection=DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
             throw new SQLException("Errore di connessione al database", e);
         }
@@ -38,3 +41,4 @@ public class DatabaseManager {
         }
     }
 }
+
