@@ -42,7 +42,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">Su di noi</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Automobili</a></li>
+	          <li class="nav-item"><a href="CarServlet" class="nav-link">Automobili</a></li>
 	          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contattaci</a></li>
 	        </ul>

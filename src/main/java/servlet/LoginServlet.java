@@ -12,19 +12,34 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 import dao.AutomobileDAO;
 import dao.UtenteDAO;
+import bean.Automobile;
 import bean.Utente;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try 
+		{
+				
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			
+		} 
+		catch (Exception e) 
+		{
+			throw new ServletException(e);
+		}
+	}
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+        //aaaa
         try {
         	DatabaseManager dbManager = new DatabaseManager();
 			UtenteDAO utenteDAO= new UtenteDAO(dbManager.getConnection());
@@ -37,7 +52,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("isLoggedIn", true);
                 
                 request.setAttribute("msg", "Login avvenuto con successo");
-                request.getRequestDispatcher("homePage.jsp").forward(request, response);
+                request.getRequestDispatcher("homepage.jsp").forward(request, response);
             } else {
                 response.sendRedirect("login.jsp");
             }

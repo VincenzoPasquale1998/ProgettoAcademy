@@ -16,7 +16,7 @@ import java.util.List;
 
 import bean.Automobile;
 import dao.AutomobileDAO;
-
+//aaaaaa
 @WebServlet("/uploadAutomobile")
 @MultipartConfig(maxFileSize = 16177215) // 16MB
 public class UploadAutomobileServlet extends HttpServlet {
