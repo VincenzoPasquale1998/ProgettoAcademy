@@ -37,9 +37,9 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("isLoggedIn", true);
                 
                 request.setAttribute("msg", "Login avvenuto con successo");
-                request.getRequestDispatcher("home.jsp").forward(request, response);
+                request.getRequestDispatcher("homePage.jsp").forward(request, response);
             } else {
-                response.sendRedirect("login.jsp?error=1");
+                response.sendRedirect("login.jsp");
             }
         } catch (SQLException e) {
             e.printStackTrace(); 
