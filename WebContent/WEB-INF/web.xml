@@ -39,4 +39,14 @@
     <servlet-name>IndexServlet</servlet-name>
     <url-pattern>/index</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadAutomobileServlet</display-name>
+    <servlet-name>UploadAutomobileServlet</servlet-name>
+    <servlet-class>servlet.UploadAutomobileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadAutomobileServlet</servlet-name>
+    <url-pattern>/UploadAutomobileServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

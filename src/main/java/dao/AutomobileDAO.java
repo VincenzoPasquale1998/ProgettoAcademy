@@ -1,5 +1,8 @@
 package dao; 
- 
+
+
+import java.awt.Image;
+import java.io.InputStream;
 import java.sql.Connection; 
 import java.sql.PreparedStatement; 
 import java.sql.ResultSet; 
@@ -16,15 +19,15 @@ public class AutomobileDAO {
     public AutomobileDAO(Connection connection) { 
         this.connection = connection; 
     } 
- 
-    public void createAutomobile( String nome, String marca, String modello, double prezzo, String foto,String descrizione) throws SQLException { 
+   
+    public void createAutomobile( String nome, String marca, String modello, double prezzo,InputStream foto,String descrizione) throws SQLException { 
         String query = "INSERT INTO automobile (nome, marca,modello,prezzo,foto,descrizione) VALUES (?,?,?,?,?,?)"; 
         try (PreparedStatement stmt = connection.prepareStatement(query)) { 
             stmt.setString(1, nome); 
             stmt.setString(2, marca); 
             stmt.setString(3, modello); 
             stmt.setDouble(4, prezzo); 
-            stmt.setString(5, foto); 
+            stmt.setBlob(5, foto); 
             stmt.setString(6, descrizione); 
             stmt.executeUpdate(); 
         } 
@@ -41,7 +44,7 @@ public class AutomobileDAO {
              automobile.setMarca(rs.getString("marca")); 
              automobile.setModello(rs.getString("modello")); 
              automobile.setPrezzo(rs.getDouble("prezzo")); 
-             automobile.setFoto(rs.getString("foto")); 
+             automobile.setFoto(rs.getBlob("foto")); 
              automobile.setDescrizione(rs.getString("descrizione")); 
              automobili.add(automobile); 
             } 
