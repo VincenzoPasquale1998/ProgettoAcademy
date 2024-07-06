@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 			
 			Utente u = utenteDAO.getUtenteByUsernamePassword(username, password);
 
-            if (u != null&&u.getPermesso()==2) {
+            if (u != null&&u.getPermesso()==0) {
                 HttpSession session = request.getSession();
                 session.setAttribute("utente", u);
                 session.setAttribute("isLoggedIn", true);
@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("isLoggedIn", true);
                 
                 request.setAttribute("msg", "Login avvenuto con successo");
-                request.getRequestDispatcher("update.jsp").forward(request, response);
+                request.getRequestDispatcher("/catalogo").forward(request, response);
             }
             	else {
                 response.sendRedirect("login.jsp");

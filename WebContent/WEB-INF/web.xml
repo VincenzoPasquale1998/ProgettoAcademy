@@ -69,4 +69,14 @@
     <servlet-name>CarServlet</servlet-name>
     <url-pattern>/CarServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>update</display-name>
+    <servlet-name>update</servlet-name>
+    <servlet-class>servlet.update</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
 </web-app>
