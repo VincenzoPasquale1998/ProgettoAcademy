@@ -36,22 +36,24 @@ public class AutomobileDAO {
     public Automobile getAutoByID(int id) {
         //Restituisce il dipendente relativo al codice fiscale passato
         String sql = "SELECT * FROM automobile WHERE id = ?";
+        Automobile a=null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Automobile a= new Automobile();
-        try {
+        a= new Automobile();
+        try {  	
             ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
             rs = ps.executeQuery(); //DQL
-            a.setId(id);
-            a.setNome(rs.getString("nome")); 
-            a.setMarca(rs.getString("marca")); 
-            a.setModello(rs.getString("modello")); 
-            a.setPrezzo(rs.getDouble("prezzo")); 
-            a.setFoto(rs.getBlob("foto")); 
-            a.setDescrizione(rs.getString("descrizione")); 
-           
-
+            while(rs.next()) {
+            	a.setId(id);
+	            a.setNome(rs.getString("nome")); 
+	            a.setMarca(rs.getString("marca")); 
+	            a.setModello(rs.getString("modello")); 
+	            a.setPrezzo(rs.getDouble("prezzo")); 
+	            a.setFoto(rs.getBlob("foto")); 
+	            a.setDescrizione(rs.getString("descrizione")); 
+            }
+            
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -73,6 +75,7 @@ public class AutomobileDAO {
              automobile.setPrezzo(rs.getDouble("prezzo")); 
              automobile.setFoto(rs.getBlob("foto")); 
              automobile.setDescrizione(rs.getString("descrizione")); 
+             automobile.setId(rs.getInt("id"));
              automobili.add(automobile); 
             } 
         } 

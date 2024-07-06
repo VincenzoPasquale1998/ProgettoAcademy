@@ -29,7 +29,7 @@
 					<td>${listaAuto.modello}</td>
 					<td>${listaAuto.prezzo}</td>
 					<td>${listaAuto.descrizione}</td>
-					<td><a href="/update?id=${listaAuto.id}"><b>Modifica</b></a></td>
+					<td><a href="update?id=${listaAuto.id}"><b>Modifica</b></a></td>
 					<td><a href="elimina.jsp?id=${listaAuto.id}"><b>Elimina</b></a></td>
 					<!--<td><a href="update.jsp">Modifica</a></td> -->
 				</tr>

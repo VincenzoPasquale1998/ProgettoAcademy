@@ -10,15 +10,15 @@
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="${auto.nome}"><br><br>
         <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca"><br><br>
+        <input type="text" id="marca" name="marca" value="${auto.marca}"><br><br>
         <label for="modello">Modello:</label>
-        <input type="text" id="modello" name="modello"><br><br>
+        <input type="text" id="modello" name="modello" value="${auto.modello}"><br><br>
         <label for="prezzo">Prezzo:</label>
-        <input type="text" id="prezzo" name="prezzo"><br><br>
+        <input type="text" id="prezzo" name="prezzo" value="${auto.prezzo}"><br><br>
         <label for="descrizione">Descrizione:</label>
-        <input type="text" id="descrizione" name="descrizione"><br><br>
+        <input type="text" id="descrizione" name="descrizione" value="${auto.descrizione}"><br><br>
         <label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto"><br><br>
+        <input type="file" id="foto" name="foto" value="${auto.foto}"><br><br>
         <input type="submit" value="Upload">
     </form>
 </body>
