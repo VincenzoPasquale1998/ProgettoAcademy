@@ -11,15 +11,16 @@ import util.DatabaseManager;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import bean.Automobile;
 import dao.AutomobileDAO;
 
 
 
-public class updateServlet extends HttpServlet {
+public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        private AutomobileDAO automobileDao;
     
-    public updateServlet() {
+    public UpdateServlet() {
         super();
         
     }
@@ -28,6 +29,7 @@ public class updateServlet extends HttpServlet {
         try {
             DatabaseManager dbManager = new DatabaseManager(); // crea il dbManager e crea la connesione, ogni volta che chiami init chiama la connessione
             automobileDao = new AutomobileDAO(dbManager.getConnection());
+            
         } catch (SQLException e) {
         	 
         	throw new ServletException(e);
@@ -36,7 +38,10 @@ public class updateServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int id = Integer.parseInt(request.getParameter("id"));
+		Automobile a= automobileDao.getAutoByID(id);
+		request.setAttribute("auto", a);
+		request.getRequestDispatcher("update.jsp").forward(request, response);
 	}
 
 	

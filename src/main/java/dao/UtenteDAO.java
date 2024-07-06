@@ -55,6 +55,8 @@ public class UtenteDAO {
             stmt.executeUpdate(); 
         } 
     } 
+   
+    
     public Utente getUtenteByUsernamePassword(String nome,String password) { 
   //Restituisce l'account relativo a username e password passati 
   String query = "SELECT * FROM utente WHERE nome = ? AND password = ? "; 

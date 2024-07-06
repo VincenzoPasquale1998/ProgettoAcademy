@@ -71,12 +71,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>update</display-name>
-    <servlet-name>update</servlet-name>
-    <servlet-class>servlet.update</servlet-class>
+    <display-name>UpdateServlet</display-name>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>servlet.UpdateServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>update</servlet-name>
+    <servlet-name>UpdateServlet</servlet-name>
     <url-pattern>/update</url-pattern>
   </servlet-mapping>
 </web-app>

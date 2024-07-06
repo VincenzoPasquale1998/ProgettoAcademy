@@ -8,7 +8,7 @@
 <body>
     <form action="admin" method="post" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome"><br><br>
+        <input type="text" id="nome" name="nome" value="${auto.nome}"><br><br>
         <label for="marca">Marca:</label>
         <input type="text" id="marca" name="marca"><br><br>
         <label for="modello">Modello:</label>
