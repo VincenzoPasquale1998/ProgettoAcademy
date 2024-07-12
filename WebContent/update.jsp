@@ -6,7 +6,9 @@
     <title>Upload Automobile</title>
 </head>
 <body>
-    <form action="admin" method="post" enctype="multipart/form-data">
+    <form action="update" method="post" enctype="multipart/form-data">
+       	<label for="id">ID:</label>
+       	<input type="text" id="id" name="id" value="${auto.id}" readonly="readonly"><br><br>
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="${auto.nome}"><br><br>
         <label for="marca">Marca:</label>

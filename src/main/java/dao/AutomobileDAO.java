@@ -33,7 +33,7 @@ public class AutomobileDAO {
         } 
     } 
     
-    public Automobile getAutoByID(int id) {
+    public Automobile getAutoByID(int id) throws SQLException {
         //Restituisce il dipendente relativo al codice fiscale passato
         String sql = "SELECT * FROM automobile WHERE id = ?";
         Automobile a=null;
