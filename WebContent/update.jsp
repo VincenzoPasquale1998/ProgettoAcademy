@@ -3,25 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload Automobile</title>
+<meta charset="ISO-8859-1">
+<title>Modifica Auto</title>
 </head>
 <body>
-    <form action="update" method="post" enctype="multipart/form-data">
-       	<label for="id">ID:</label>
-       	<input type="text" id="id" name="id" value="${auto.id}" readonly="readonly"><br><br>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="${auto.nome}"><br><br>
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca" value="${auto.marca}"><br><br>
-        <label for="modello">Modello:</label>
-        <input type="text" id="modello" name="modello" value="${auto.modello}"><br><br>
+<div>
+    <form action="update" method="post">
+        <input type="text" id="id" name="id" value="${auto.id}" hidden="true" required><br>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" value="${auto.nome}" required><br>
+        <label for="marca">Marca</label>
+        <input type="text" id="marca" name="marca" value="${auto.marca}"  required><br>
+        <label for="modello">Modello</label>
+        <input type="text" id="modello" name="modello" value="${auto.modello}"  required><br>
+        <label for="descrizione">Descrizione</label>
+        <input type="text" id="descrizione" name="descrizione" value="${auto.descrizione}"  required><br>
         <label for="prezzo">Prezzo:</label>
         <input type="text" id="prezzo" name="prezzo" value="${auto.prezzo}"><br><br>
-        <label for="descrizione">Descrizione:</label>
-        <input type="text" id="descrizione" name="descrizione" value="${auto.descrizione}"><br><br>
         <label for="foto">Foto:</label>
         <input type="file" id="foto" name="foto" value="${auto.foto}"><br><br>
-        <input type="submit" value="Upload">
-    </form>
+        <button type="reset">Reset</button>
+        <button type="submit">Salva modifica</button>
+    </form> 
+</div>
+
 </body>
 </html>
