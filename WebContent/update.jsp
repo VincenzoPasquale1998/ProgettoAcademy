@@ -9,7 +9,9 @@
 <body>
 <div>
     <form action="update" method="post">
-        <input type="text" id="id2" name="id2" value="${auto.id}" hidden="true" required><br>
+    	<label for="id">Id:</label>
+    	<span>${auto.id}</span><br>
+    	<input type="hidden" id="id2" name="id2" value="${auto.id}" hidden="true" required><br>
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" value="${auto.nome}" required><br>
         <label for="marca">Marca</label>

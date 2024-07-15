@@ -12,7 +12,7 @@ public class DatabaseManager {
         try {
             Properties props = new Properties();
             props.load(getClass().getClassLoader().getResourceAsStream("db.properties"));
-            String JDBC_DRIVER ="com.mysql.jdbc.Driver";
+            String JDBC_DRIVER ="com.mysql.cj.jdbc.Driver";
             String url = props.getProperty("url");
             //url="jdbc:mysql://localhost:3306/campionato_calcio";
             String user = props.getProperty("user");
