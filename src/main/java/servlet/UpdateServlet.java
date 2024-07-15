@@ -56,7 +56,7 @@ public class UpdateServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//(int id, String nome, String marca, String modello, double prezzo, String foto,String descrizione)
 		try {
-			int id= Integer.parseInt(request.getParameter("id"));
+			int id= Integer.parseInt(request.getParameter("id2"));
 			double prezzo=Double.parseDouble(request.getParameter("prezzo"));
 			automobileDao.updateAutomobile(id,request.getParameter("nome"),request.getParameter("marca"),request.getParameter("modello"),prezzo,request.getParameter("foto"),request.getParameter("descrizione"));
 		} catch (SQLException e) {
