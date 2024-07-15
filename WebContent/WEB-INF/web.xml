@@ -79,4 +79,14 @@
     <servlet-name>UpdateServlet</servlet-name>
     <url-pattern>/update</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminaServlet</display-name>
+    <servlet-name>EliminaServlet</servlet-name>
+    <servlet-class>servlet.EliminaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminaServlet</servlet-name>
+    <url-pattern>/elimina</url-pattern>
+  </servlet-mapping>
 </web-app>

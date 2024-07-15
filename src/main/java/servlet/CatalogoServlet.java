@@ -19,6 +19,7 @@ public class CatalogoServlet extends HttpServlet {
     
 	private static final long serialVersionUID = 1L;
 	private AutomobileDAO automobileDao;
+	DatabaseManager dbManager;
     public CatalogoServlet() {
         super();
     }
@@ -38,6 +39,8 @@ public class CatalogoServlet extends HttpServlet {
 			request.getRequestDispatcher("catalogo.jsp").forward(request, response);
 		} catch (SQLException e) {
 			throw new ServletException("Errore non riesco a recuperare le automobili", e);
+		} finally {
+			dbManager.close();
 		}
 	}
 
