@@ -81,7 +81,7 @@
 </div>
 
 <div class="cup">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Trophy_Flat_Icon.svg/768px-Trophy_Flat_Icon.svg.png" alt="Cup">
+    <img src="images/bg_3.jpg" alt="Cup">
 </div>
 </body>
 </html>
